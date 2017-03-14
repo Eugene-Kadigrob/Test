@@ -1,17 +1,26 @@
 #include <iostream>
 #include <string>  
-#include <string.h>
+#include <fstream>
 
 using namespace std;
 
 int main()
 {	
-	// операторы вывода можно сцеплять
-	
-	cout << "Long 'Улисс' равна: \t"
-		 << strlen("Улисс") << '\n';
+	ifstream infile("input.txt");
+	ofstream outfile("output.txt");
 
-	cout << "Size 'Улисс' равен: \t"
-		<< sizeof("Улисс") << endl;
-	//return 0;
+	if (!infile) {
+		cerr << "Error opening input file.\n";
+		return -1;
+	}
+
+	if (!outfile) {
+		cerr << "Error opening output file.\n";
+		return -2;
+	}
+
+	string word;
+	while (infile >> word)
+		outfile << "SM_" << word << endl;
+	return 0;
 }
