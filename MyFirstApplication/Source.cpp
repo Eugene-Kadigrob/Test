@@ -6,8 +6,8 @@ using namespace std;
 
 int main()
 {	
-	ifstream infile("input.txt");
-	ofstream outfile("output.txt");
+	ifstream infile("input.txt");		//открывает файл для чтения
+	ofstream outfile("output.txt");		//открывает файл для записи
 
 	if (!infile) {
 		cerr << "Error opening input file.\n";
@@ -20,7 +20,9 @@ int main()
 	}
 
 	string word;
-	while (infile >> word)
-		outfile << "SM_" << word << endl;
+	while (infile >> word) {
+		outfile << "SM_" << word << '\n';
+		cout << "SM_" << word << '\n';
+	}
 	return 0;
 }
