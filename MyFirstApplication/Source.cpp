@@ -1,11 +1,12 @@
 #include <iostream>
 #include <string>  
-#include <fstream>
+#include <fstream>	// использование файла для ввода или вывода
 
 using namespace std;
 
 int main()
 {	
+
 	ifstream infile("input.txt");		//открывает файл для чтения
 	ofstream outfile("output.txt");		//открывает файл для записи
 
